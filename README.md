@@ -27,9 +27,9 @@ Git também é necessário - [Download do git](https://git-scm.com/download/win)
 Clique no link abaixo para fazer o download do Math Optimizer
 
 
-```bash
-[https://github.com/Worbnaticus/MathOptimizer](https://github.com/Worbnaticus/MathOptimizer/archive/refs/heads/main.zip
-```
+
+[Fazer download do Math Optimizer](https://github.com/Worbnaticus/MathOptimizer/archive/refs/heads/main.zip)
+
 
 # Contato
 Se você tiver alguma dúvida ou sugestão, entre em contato conosco em nosso [servidor do discord!](https://discord.gg/NsKBQJttcq) : https://discord.gg/NsKBQJttcq

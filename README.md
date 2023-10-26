@@ -24,11 +24,11 @@ Certifique-se de ter a versão do windows 10 ou superior para utilizar o program
 
 Git também é necessário - [Download do git](https://git-scm.com/download/win)
 
-Entre em uma pasta que você criou em seu computador, e digite o comando na BARRA DE ENDEREÇO -- Pesquise se for necessário
+Clique no link abaixo para fazer o download do Math Optimizer
 
 
 ```bash
-git.clone https://github.com/Worbnaticus/MathOptimizer
+[https://github.com/Worbnaticus/MathOptimizer](https://github.com/Worbnaticus/MathOptimizer/archive/refs/heads/main.zip
 ```
 
 # Contato

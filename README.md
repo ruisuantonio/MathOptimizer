@@ -1,4 +1,6 @@
-# Math Optimizer
+# Math OptimizerEX
+
+# Final Edition Rev 02/12/2023
 
 
 

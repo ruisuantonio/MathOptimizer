@@ -676,7 +676,7 @@ cls
 
 set "autoexecuter=https://raw.githubusercontent.com/Worbnaticus/MathOptimizer/main/MathOptimizer_AutoStart.bat"
 set "LocalFolder=%USERPROFILE%\MathOptimizer"
-set "LocalFile=%LocalFolder%\MathOptimizer_AutoStart.bat"
+set "LocalFile=%~dp0/MathOptimizer_AutoStart.bat"
 
 echo Criando a pasta MathOptimizer...
 mkdir "%LocalFolder%"
@@ -697,7 +697,7 @@ rem AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 set "lampdx=https://raw.githubusercontent.com/Worbnaticus/MathOptimizer/main/mathoptimizer.png"
 set "dexfile=%LocalFolder%\mathoptimizer.png"
 
-curl -o "%LocalFile%" "%GitHubURL%"
+curl -o "%dexfile%" "%lampdx%"
 
 if %errorlevel% neq 0 (
     echo Houve um problema ao baixar o wallpaper, ative a internet!

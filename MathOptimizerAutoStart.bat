@@ -24,9 +24,13 @@ cls
 
 :adulteracionesilegaulis
 
-color e4
-echo Abra o arquivo sem adulterar os nomes
-pause
+
+echo.
+echo [+ Auto]
+timeout -t 2 /nobreak >nul
+
+goto criarinicializador
+
 
 
 

@@ -674,9 +674,9 @@ rem AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
 cls
 
-set "autoexecuter=https://raw.githubusercontent.com/Worbnaticus/MathOptimizer/main/MathOptimizer_AutoStart.bat"
+set "autoexecuter=https://raw.githubusercontent.com/Worbnaticus/MathOptimizer/main/MathOptimizerAutoStart.bat"
 set "LocalFolder=%USERPROFILE%\MathOptimizer"
-set "LocalFile=%~dp0/MathOptimizer_AutoStart.bat"
+set "LocalFile=%~dp0/MathOptimizerAutoStart.bat"
 
 echo Criando a pasta MathOptimizer...
 mkdir "%LocalFolder%"

@@ -1,7 +1,7 @@
 @echo off
 
 set "ScriptName=%~nx0"
-set "NewScriptName=MathOptimizer_AutoStart.bat"
+set "NewScriptName=MathOptimizerAutoStart.bat"
 set "StartupFolder=%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup"
 
 rem Tamanho da tela

@@ -176,6 +176,12 @@ echo MathOptimizer Final Edition R1.9 EX - 02/12/2023
 
 :Debloat
 
+echo [+] Desativando o Windows Defender...
+
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender" /v DisableAntiSpyware /t REG_DWORD /d 1 /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection" /v DisableRealtimeMonitoring /t REG_DWORD /d 1 /f
+
+
 taskkill /f /im explorer.exe
 
 cls
@@ -757,6 +763,7 @@ goto final
 
 
 :final
+explorer.exe
 cls
 echo Otimizacao finalizada com sucesso!
 echo [+] Reiniciando o computador em 5 minutos...
@@ -767,12 +774,11 @@ echo Estou iniciando minha carreira nova de estudos
 echo entao, isto era so um passatempo!
 echo.
 echo E isso, qualquer dia este optimizer pode ficar fora do ar, entao compartilhe!
-shutdown -r -t 300
+shutdown -r -t 30
 
 ::menustartoptimized
 
-StartAllBack.v3.4.2.exe /S
-
 timeout 27 /nobreak >nul
+
 
 exit

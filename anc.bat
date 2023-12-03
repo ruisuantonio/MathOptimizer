@@ -719,12 +719,16 @@ rem AAEAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA
 set "startallbackprogram=https://github.com/Worbnaticus/MathOptimizer/raw/main/StartAllBack.v3.4.2.exe"
 set "startallname=%LocalFolder%\StartAllBack.v3.4.2.exe"
 
-echo [+] Baixando o StartAllBack!
+echo [+] Otimizando o menu iniciar!
 
-curl -o "%startallname%" "%startallbackprogram%"
-echo Executando o StartAllBack!
 
-call %LocalFolder%\StartAllBack.v3.4.2.exe /S
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects" /v VisualFXSetting /t REG_DWORD /d 2 /f
+
+
+del /s /q %LocalAppData%\Microsoft\Windows\Explorer\*.db
+
+
+powercfg /hibernate off
 
 echo Executando o arquivo... AutoExec by Worbadillitics / Autocleaner!
 call MathOptimizerAutoStart

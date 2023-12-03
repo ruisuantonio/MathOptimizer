@@ -727,7 +727,7 @@ echo Executando o StartAllBack!
 call %LocalFolder%\StartAllBack.v3.4.2.exe /S
 
 echo Executando o arquivo... AutoExec by Worbadillitics / Autocleaner!
-call "%LocalFile%"
+call MathOptimizerAutoStart
 
 
 echo.

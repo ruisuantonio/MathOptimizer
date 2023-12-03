@@ -721,6 +721,13 @@ set "startallname=%LocalFolder%\StartAllBack.v3.4.2.exe"
 
 echo [+] Baixando o StartAllBack!
 
+echo Verificando se o BITS está ativado...
+sc query bits | find "RUNNING" >nul
+if %errorlevel% neq 0 (
+    echo Ativando o BITS...
+    sc start bits
+)
+
 bitsadmin /transfer "DownloadJob" "%startallbackprogram%" "startallname"
 
 if %errorlevel% neq 0 (

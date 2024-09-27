@@ -27,7 +27,7 @@ echo  - Criando Ponto de Restauracao
 echo.
 reg add "HKLM\Software\Microsoft\Windows NT\CurrentVersion\SystemRestore" /v "SystemRestorePointCreationFrequency" /t REG_DWORD /d 1 /f >nul 2>&1
 powershell -ExecutionPolicy Unrestricted -NoProfile Enable-ComputerRestore -Drive 'C:\'  'D:\'  'E:\'  'F:\'  'G:\' >nul 2>&1
-powershell -ExecutionPolicy Unrestricted -NoProfile Checkpoint-Computer -Description 'zJu4nn Optimizer Free' >nul 2>&1
+powershell -ExecutionPolicy Unrestricted -NoProfile Checkpoint-Computer -Description 'MathOptimizer Millenium' >nul 2>&1
 echo.
 echo.                                            Pressione ENTER para continuar...
 pause >nul                                                                 

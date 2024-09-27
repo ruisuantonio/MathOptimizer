@@ -1,9 +1,5 @@
 # Math OptimizerEX
 
-# Final Edition Rev 02/12/2023
-
-
-
 ![GitHub](https://img.shields.io/github/license/Worbnaticus/MathOptimizer)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Worbnaticus/MathOptimizer)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/Worbnaticus/MathOptimizer)

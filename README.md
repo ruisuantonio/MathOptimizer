@@ -6,4 +6,4 @@
 ![GitHub issues](https://img.shields.io/github/issues/ruisuantonio/MathOptimizer)
 
 O Math Optimizer é feito para deixar seu computador mais rapido, eliminando coisas inúteis ( ou oque parece inútil ) <br>
-> Antes de usar, [leia nossa licença](https://github.com/ruisuantonio/MathOptimizer/blob/main/LICENSE.md) onde nós expressamos que não temos nenhuma responsabilidade pelo uso deste programa.
+> Antes de usar, [leia nossa licença](https://github.com/ruisuantonio/MathOptimizer/blob/main/LICENSE) onde nós expressamos que não temos nenhuma responsabilidade pelo uso deste programa.

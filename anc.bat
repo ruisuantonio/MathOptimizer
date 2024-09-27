@@ -483,8 +483,8 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects" 
 echo  Excluir arquivos de log do WMI
 del /q/f/s C:\Windows\System32\LogFiles\WMI\*
 echo  Excluir cache de icones
-del /a /f /q C:\Users\luisa\AppData\Local\IconCache.db
-del /a /f /q C:\Users\luisa\AppData\Local\Microsoft\Windows\Explorer\iconcache*
+del /a /f /q %localappdata%\IconCache.db
+del /a /f /q %localappdata%\Microsoft\Windows\Explorer\iconcache*
 echo  Desativar hibernacao
 powercfg -hibernate off
 echo  Desativar atualizacoes automaticas
@@ -527,14 +527,14 @@ echo  Desativar relatorios de erros
 reg add "HKLM\SOFTWARE\Microsoft\Windows\Windows Error Reporting" /v Disabled /t REG_DWORD /d 1 /f
 echo  Limpar historico de pesquisas
 reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\WordWheelQuery" /f
-del /q/f/s C:\Users\luisa\AppData\Roaming\Microsoft\Windows\Recent\*
+del /q/f/s %userprofile%\AppData\Roaming\Microsoft\Windows\Recent\*
 echo  Configuracoes de busca e Cortana
 reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\DriverSearching" /v SearchOrderConfig /t REG_DWORD /d 0 /f
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\Windows Search" /v AllowCortana /t REG_DWORD /d 0 /f
 echo  Configuracoes de personalizacao
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\Personalization" /v NoLockScreen /t REG_DWORD /d 1 /f
 echo  Limpar cache de miniaturas
-del /q/f/s C:\Users\luisa\AppData\Local\Microsoft\Windows\Explorer\thumbcache*
+del /q/f/s %localappdata%\Microsoft\Windows\Explorer\thumbcache*
 echo  Configuracoes de sistema
 reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v EnableLUA /t REG_DWORD /d 0 /f
 echo  Desativando sincronizacao de configuracoes
@@ -2848,16 +2848,16 @@ cls
 goto :MENU
 :WinUpd
 rem Definir o caminho para a Area de Trabalho
-set "desktop=C:\Users\luisa\Desktop"
+set "desktop=%userprofile%\Desktop"
 rem Definir o caminho para a pasta Downloads
-set "downloads=C:\Users\luisa\Downloads"
+set "downloads=%userprofile%\Downloads"
 rem Tentar abrir o arquivo Wub_x64.exe da Area de Trabalho
-if exist "C:\Users\luisa\Desktop\zJu4nn Menu\Arquivos\Wub_x64.exe" (
-    start "Wub_x64" "C:\Users\luisa\Desktop\zJu4nn Menu\Arquivos\Wub_x64.exe"
+if exist "%userprofile%\Desktop\zJu4nn Menu\Arquivos\Wub_x64.exe" (
+    start "Wub_x64" "%userprofile%\Desktop\zJu4nn Menu\Arquivos\Wub_x64.exe"
 ) else (
     rem Se nao encontrado na Area de Trabalho  tentar abrir da pasta Downloads
-    if exist "C:\Users\luisa\Downloads\zJu4nn Menu\Arquivos\Wub_x64.exe" (
-        start "Wub_x64" "C:\Users\luisa\Downloads\zJu4nn Menu\Arquivos\Wub_x64.exe"
+    if exist "%userprofile%\Downloads\zJu4nn Menu\Arquivos\Wub_x64.exe" (
+        start "Wub_x64" "%userprofile%\Downloads\zJu4nn Menu\Arquivos\Wub_x64.exe"
     ) else (
         echo.
         echo Arquivo Wub_x64.exe nao encontrado na Area de Trabalho nem na pasta Downloads.
@@ -2963,20 +2963,20 @@ echo.
 del *.log /a /s /q /f
 del /s /f /q c:\windows\temp\*.*
 del /s /f /q C:\WINDOWS\Prefetch
-del /s /f /q C:\Users\luisa\AppData\Local\Temp\*.*
+del /s /f /q %localappdata%\Temp\*.*
 ipconfig /flushdns
 net stop wuauserv
 net stop UsoSvc
 rd /s /q C:\Windows\SoftwareDistribution
 md C:\Windows\SoftwareDistribution
-RD /S /Q C:\Users\luisa\AppData\Local\Temp
-MKDIR C:\Users\luisa\AppData\Local\Temp
-takeown /f "C:\Users\luisa\AppData\Local\Temp" /r /d y
+RD /S /Q %localappdata%\Temp
+MKDIR %localappdata%\Temp
+takeown /f "%localappdata%\Temp" /r /d y
 takeown /f "C:\Windows\Temp" /r /d y
 RD /S /Q C:\Windows\Temp
 MKDIR C:\Windows\Temp
 takeown /f "C:\Windows\Temp" /r /d y
-takeown /f C:\Users\luisa\AppData\Local\Temp /r /d y
+takeown /f %localappdata%\Temp /r /d y
 echo.
 echo                                          Lixo Limpado com Sucesso
 echo                                         "........................."
@@ -3022,16 +3022,16 @@ cls
 goto :MENU
 :WinDefender
 rem Definir o caminho para a Area de Trabalho
-set "desktop=C:\Users\luisa\Desktop"
+set "desktop=%userprofile%\Desktop"
 rem Definir o caminho para a pasta Downloads
-set "downloads=C:\Users\luisa\Downloads"
+set "downloads=%userprofile%\Downloads"
 rem Tentar abrir o arquivo dfControl.exe da Area de Trabalho
-if exist "C:\Users\luisa\Desktop\zJu4nn Menu\Arquivos\dfControl.exe" (
-    start "dfControl" "C:\Users\luisa\Desktop\zJu4nn Menu\Arquivos\dfControl.exe"
+if exist "%userprofile%\Desktop\zJu4nn Menu\Arquivos\dfControl.exe" (
+    start "dfControl" "%userprofile%\Desktop\zJu4nn Menu\Arquivos\dfControl.exe"
 ) else (
     rem Se nao encontrado na Area de Trabalho  tentar abrir da pasta Downloads
-    if exist "C:\Users\luisa\Downloads\zJu4nn Menu\Arquivos\dfControl.exe" (
-        start "dfControl" "C:\Users\luisa\Downloads\zJu4nn Menu\Arquivos\dfControl.exe"
+    if exist "%userprofile%\Downloads\zJu4nn Menu\Arquivos\dfControl.exe" (
+        start "dfControl" "%userprofile%\Downloads\zJu4nn Menu\Arquivos\dfControl.exe"
     ) else (
         echo.
         echo Arquivo dfControl.exe nao encontrado na Area de Trabalho nem na pasta Downloads.
@@ -3061,16 +3061,16 @@ C:\Windows\system32\dfrgui.exe
 goto :Outros
 :MSI
 rem Definir o caminho para a Area de Trabalho
-set "desktop=C:\Users\luisa\Desktop"
+set "desktop=%userprofile%\Desktop"
 rem Definir o caminho para a pasta Downloads
-set "downloads=C:\Users\luisa\Downloads"
+set "downloads=%userprofile%\Downloads"
 rem Tentar abrir o arquivo MSI_util_v3.exe da Area de Trabalho
-if exist "C:\Users\luisa\Desktop\zJu4nn Menu\Arquivos\MSI_util_v3.exe" (
-    start "MSI Utility" "C:\Users\luisa\Desktop\zJu4nn Menu\Arquivos\MSI_util_v3.exe"
+if exist "%userprofile%\Desktop\zJu4nn Menu\Arquivos\MSI_util_v3.exe" (
+    start "MSI Utility" "%userprofile%\Desktop\zJu4nn Menu\Arquivos\MSI_util_v3.exe"
 ) else (
     rem Se nao encontrado na Area de Trabalho  tentar abrir da pasta Downloads
-    if exist "C:\Users\luisa\Downloads\zJu4nn Menu\Arquivos\MSI_util_v3.exe" (
-        start "MSI Utility" "C:\Users\luisa\Downloads\zJu4nn Menu\Arquivos\MSI_util_v3.exe"
+    if exist "%userprofile%\Downloads\zJu4nn Menu\Arquivos\MSI_util_v3.exe" (
+        start "MSI Utility" "%userprofile%\Downloads\zJu4nn Menu\Arquivos\MSI_util_v3.exe"
     ) else (
         echo.
         echo Arquivo MSI_util_v3.exe nao encontrado na Area de Trabalho nem na pasta Downloads.
@@ -3082,16 +3082,16 @@ if exist "C:\Users\luisa\Desktop\zJu4nn Menu\Arquivos\MSI_util_v3.exe" (
 goto :MENU
 :WinTweaker
 rem Definir o caminho para a Area de Trabalho
-set "desktop=C:\Users\luisa\Desktop"
+set "desktop=%userprofile%\Desktop"
 rem Definir o caminho para a pasta Downloads
-set "downloads=C:\Users\luisa\Downloads"
+set "downloads=%userprofile%\Downloads"
 rem Tentar abrir o arquivo Ultimate Windows Tweaker 4.8.exe da Area de Trabalho
-if exist "C:\Users\luisa\Desktop\zJu4nn Menu 5.0\Arquivos\Ultimate Windows Tweaker 4.8.exe" (
-    start "Ultimate Windows Tweaker" "C:\Users\luisa\Desktop\zJu4nn Menu 5.0\Arquivos\Ultimate Windows Tweaker 4.8.exe"
+if exist "%userprofile%\Desktop\zJu4nn Menu 5.0\Arquivos\Ultimate Windows Tweaker 4.8.exe" (
+    start "Ultimate Windows Tweaker" "%userprofile%\Desktop\zJu4nn Menu 5.0\Arquivos\Ultimate Windows Tweaker 4.8.exe"
 ) else (
     rem Se nao encontrado na Area de Trabalho  tentar abrir da pasta Downloads
-    if exist "C:\Users\luisa\Downloads\zJu4nn Menu 5.0\Arquivos\Ultimate Windows Tweaker 4.8.exe" (
-        start "Ultimate Windows Tweaker" "C:\Users\luisa\Downloads\zJu4nn Menu 5.0\Arquivos\Ultimate Windows Tweaker 4.8.exe"
+    if exist "%userprofile%\Downloads\zJu4nn Menu 5.0\Arquivos\Ultimate Windows Tweaker 4.8.exe" (
+        start "Ultimate Windows Tweaker" "%userprofile%\Downloads\zJu4nn Menu 5.0\Arquivos\Ultimate Windows Tweaker 4.8.exe"
     ) else (
         echo.
         echo Arquivo Ultimate Windows Tweaker 4.8.exe nao encontrado na Area de Trabalho nem na pasta Downloads.
@@ -3103,16 +3103,16 @@ if exist "C:\Users\luisa\Desktop\zJu4nn Menu 5.0\Arquivos\Ultimate Windows Tweak
 goto :Outros
 :Unpark
 rem Definir o caminho para a Area de Trabalho
-set "desktop=C:\Users\luisa\Desktop"
+set "desktop=%userprofile%\Desktop"
 rem Definir o caminho para a pasta Downloads
-set "downloads=C:\Users\luisa\Downloads"
+set "downloads=%userprofile%\Downloads"
 rem Tentar abrir o arquivo UnparkCpu.exe da Area de Trabalho
-if exist "C:\Users\luisa\Desktop\zJu4nn Menu 5.0\Arquivos\UnparkCpu.exe" (
-    start "UnparkCpu" "C:\Users\luisa\Desktop\zJu4nn Menu 5.0\Arquivos\UnparkCpu.exe"
+if exist "%userprofile%\Desktop\zJu4nn Menu 5.0\Arquivos\UnparkCpu.exe" (
+    start "UnparkCpu" "%userprofile%\Desktop\zJu4nn Menu 5.0\Arquivos\UnparkCpu.exe"
 ) else (
     rem Se nao encontrado na Area de Trabalho  tentar abrir da pasta Downloads
-    if exist "C:\Users\luisa\Downloads\zJu4nn Menu 5.0\Arquivos\UnparkCpu.exe" (
-        start "UnparkCpu" "C:\Users\luisa\Downloads\zJu4nn Menu 5.0\Arquivos\UnparkCpu.exe"
+    if exist "%userprofile%\Downloads\zJu4nn Menu 5.0\Arquivos\UnparkCpu.exe" (
+        start "UnparkCpu" "%userprofile%\Downloads\zJu4nn Menu 5.0\Arquivos\UnparkCpu.exe"
     ) else (
         echo.
         echo Arquivo UnparkCpu.exe nao encontrado na Area de Trabalho nem na pasta Downloads.
@@ -3124,16 +3124,16 @@ if exist "C:\Users\luisa\Desktop\zJu4nn Menu 5.0\Arquivos\UnparkCpu.exe" (
 goto :Outros
 :AutoRuns
 rem Definir o caminho para a Area de Trabalho
-set "desktop=C:\Users\luisa\Desktop"
+set "desktop=%userprofile%\Desktop"
 rem Definir o caminho para a pasta Downloads
-set "downloads=C:\Users\luisa\Downloads"
+set "downloads=%userprofile%\Downloads"
 rem Tentar abrir o arquivo AutoRuns.exe da Area de Trabalho
-if exist "C:\Users\luisa\Desktop\zJu4nn Menu\Arquivos\AutoRuns.exe" (
-    start "AutoRuns" "C:\Users\luisa\Desktop\zJu4nn Menu\Arquivos\AutoRuns.exe"
+if exist "%userprofile%\Desktop\zJu4nn Menu\Arquivos\AutoRuns.exe" (
+    start "AutoRuns" "%userprofile%\Desktop\zJu4nn Menu\Arquivos\AutoRuns.exe"
 ) else (
     rem Se nao encontrado na Area de Trabalho  tentar abrir da pasta Downloads
-    if exist "C:\Users\luisa\Downloads\zJu4nn Menu\Arquivos\AutoRuns.exe" (
-        start "AutoRuns" "C:\Users\luisa\Downloads\zJu4nn Menu\Arquivos\AutoRuns.exe"
+    if exist "%userprofile%\Downloads\zJu4nn Menu\Arquivos\AutoRuns.exe" (
+        start "AutoRuns" "%userprofile%\Downloads\zJu4nn Menu\Arquivos\AutoRuns.exe"
     ) else (
         echo.
         echo Arquivo AutoRuns.exe nao encontrado na Area de Trabalho nem na pasta Downloads.
@@ -3164,16 +3164,16 @@ pause
 goto :Outros
 :Profile
 rem Definir o caminho para a Area de Trabalho
-set "desktop=C:\Users\luisa\Desktop"
+set "desktop=%userprofile%\Desktop"
 rem Definir o caminho para a pasta Downloads
-set "downloads=C:\Users\luisa\Downloads"
+set "downloads=%userprofile%\Downloads"
 rem Tentar abrir o arquivo NvidiaProfileInspector.exe da Area de Trabalho
-if exist "C:\Users\luisa\Desktop\zJu4nn Menu 5.0\Arquivos\AutoRuns.exe" (
-    start "NvidiaProfileInspector" "C:\Users\luisa\Desktop\zJu4nn Menu 5.0\Arquivos\nvidiaProfileInspector.exe"
+if exist "%userprofile%\Desktop\zJu4nn Menu 5.0\Arquivos\AutoRuns.exe" (
+    start "NvidiaProfileInspector" "%userprofile%\Desktop\zJu4nn Menu 5.0\Arquivos\nvidiaProfileInspector.exe"
 ) else (
     rem Se nao encontrado na Area de Trabalho  tentar abrir da pasta Downloads
-    if exist "C:\Users\luisa\Downloads\zJu4nn Menu 5.0\Arquivos\nvidiaProfileInspector.exe" (
-        start "NvidiaProfileInspector" "C:\Users\luisa\Downloads\zJu4nn Menu 5.0\Arquivos\nvidiaProfileInspector.exe"
+    if exist "%userprofile%\Downloads\zJu4nn Menu 5.0\Arquivos\nvidiaProfileInspector.exe" (
+        start "NvidiaProfileInspector" "%userprofile%\Downloads\zJu4nn Menu 5.0\Arquivos\nvidiaProfileInspector.exe"
     ) else (
         echo.
         echo Arquivo NvidiaProfileInspector.exe nao encontrado na Area de Trabalho nem na pasta Downloads.
